@@ -5,8 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Notify extends Application {
@@ -206,10 +204,10 @@ public class Notify extends Application {
 
                 newTagField.clear();
             } else {
-                System.out.println("Tag already exists in the list.");
+                System.out.println("Tagg finns redan");
             }
         } else {
-            System.out.println("Please enter a valid tag.");
+            System.out.println("Måste skriva giltig tagg");
         }
     }
     private void displaySelectedNoteTags(Note note) {
@@ -232,7 +230,7 @@ public class Notify extends Application {
             }
 
         } else {
-            System.out.println("No tag selected to remove.");
+            System.out.println("Ingen tagg vald att ta bort");
         }
     }
     private void filterNotes(String query) {
@@ -242,7 +240,7 @@ public class Notify extends Application {
 
             manager.getAllNotes().forEach(note -> noteListView.getItems().add(note.getHeading()));
         } else {
-            
+
             manager.getAllNotes().stream()
                     .filter(note -> note.getHeading().toLowerCase().contains(query.toLowerCase()) ||
                             note.getTags().stream().anyMatch(tag -> tag.toLowerCase().contains(query.toLowerCase())))

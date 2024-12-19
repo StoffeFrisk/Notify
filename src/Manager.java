@@ -11,7 +11,6 @@ public class Manager {
             return false;
         }
         Note newNote = new Note(heading, content, tags);
-        System.out.println("Saving note: " + heading + ", Tags: " + tags);
         notes.put(heading, newNote);
         return true;
     }
@@ -23,9 +22,9 @@ public class Manager {
     public Note getNoteByHeading(String heading) {
         Note note = notes.get(heading);
         if (note != null) {
-            System.out.println("Retrieved note for heading '" + heading + "': " + note.getTags());
+            System.out.println(heading + "': " + note.getTags());
         } else {
-            System.out.println("No note found for heading: " + heading);
+            System.out.println(heading);
         }
         return note;
     }
@@ -36,7 +35,6 @@ public class Manager {
         } else {
             notes.values().forEach(note -> {
                 System.out.println(note);
-                System.out.println("----------------------------");
             });
         }
     }
@@ -52,7 +50,7 @@ public class Manager {
 
     public Manager() {
         this.notes = new HashMap<>();
-        System.out.println("initsierar och är tom");
+        System.out.println("Initsierar och är tom");
     }
 
     public boolean noteExists(String heading) {

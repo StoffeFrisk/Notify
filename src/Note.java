@@ -9,7 +9,7 @@ public class Note {
     public Note(String heading, String content, List<String> tags) {
         this.heading = heading;
         this.note = content;
-        this.tags = new ArrayList<>(tags); // Copy on construction
+        this.tags = new ArrayList<>(tags);
     }
 
     public String getHeading() {
@@ -21,7 +21,7 @@ public class Note {
     }
 
     public List<String> getTags() {
-        return new ArrayList<>(tags); // Return a copy to prevent external modification
+        return new ArrayList<>(tags);
     }
 
     public void setHeading(String heading) {
@@ -33,7 +33,7 @@ public class Note {
     }
 
     public void setTags(List<String> tags) {
-        this.tags = new ArrayList<>(tags); // Copy to avoid external references
+        this.tags = new ArrayList<>(tags);
     }
 
     @Override
